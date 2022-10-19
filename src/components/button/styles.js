@@ -9,4 +9,14 @@ export const Button = styled.button`
     border: none;
 
     color: black;
+
+    cursor: pointer;
+
+    margin-top: 17px;
+
+    :hover {
+        width: 367px;
+        height: 56px;
+    }
+
 `;
