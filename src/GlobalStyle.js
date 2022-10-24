@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
         --header--dark: var(--grey400);
         --label--dark: var(--grey100);
     }
-
+    justify-items: center;
     @media(prefers-color-scheme: dark){
         :root {
             --bg--dark: var(--grey500);
@@ -86,6 +86,13 @@ const GlobalStyle = createGlobalStyle`
             --header--light: var(--yellow);
             --labels--light: var(--label);
             color-scheme: light;
+    }
+
+    .active-link{
+        font-weight: 600;
+        border-bottom: 2px solid var(--grey500);
+        width: 100px;
+        text-align: center;
     }
 
 `;

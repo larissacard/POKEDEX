@@ -1,15 +1,13 @@
 import React from "react";
+import Navbar from "../../components/navbar";
 import { Container } from './styles'
 
 export default function Home() {
-    const handleLogout = () => {
-        localStorage.clear();
-        window.location.reload();
-    }
     return (
         <Container>
-        HOME PAGE!
-        <button onClick={handleLogout}>Logout</button>
+            <Navbar/>
+            HOME PAGE!
+            
         </Container>
     )
 }
