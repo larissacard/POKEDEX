@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../login";
+import { Container } from './styles'
 
 export default function Home() {
     const handleLogout = () => {
@@ -7,9 +7,9 @@ export default function Home() {
         window.location.reload();
     }
     return (
-        <>
+        <Container>
         HOME PAGE!
         <button onClick={handleLogout}>Logout</button>
-        </>
+        </Container>
     )
 }

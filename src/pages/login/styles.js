@@ -163,9 +163,9 @@ export const Input = styled.input`
     border-radius: 8px;
     margin-bottom: 15px;
 
-    ::placeholder{
-        padding-left: 26px;
-    }
+    padding-left: 26px;
+
+    color: var(--label);
 `;
 
 export const Title = styled.text`
