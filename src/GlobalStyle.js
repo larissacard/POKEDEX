@@ -12,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
         height: 100vh;
         width: 100vw;
         font-family: 'Poppins', sans-serif;
+        background-color: var(--grey500);
+        overflow: hidden;
     }
 
     :root {

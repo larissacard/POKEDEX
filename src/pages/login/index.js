@@ -1,5 +1,5 @@
 import { React, useRef, useState } from "react";
-import { Container, Content, Input, Logo, Title, Animation } from "./styles";
+import { Container, Content, Input, Logo, Title, Animation, Clouds, CloudsTwo, CloudsThree, CloudsFour, CloudsFive, CloudsSix } from "./styles";
 import { Button } from "../../components/button";
 import { ThemeSwitcher } from "../../components/theme";
 import Home from "../home";
@@ -26,17 +26,22 @@ export default function Login() {
                 <Logo/>
                 <Title>Comece a coletar pokémons!</Title>
 
-               <form style={{"display":"flex", "flexDirection": "column"}}>
+               <form style={{"display":"flex", "flexDirection": "column", "marginBottom": "33px"}}>
                 <Input type={"text"} ref={email} placeholder="Email"/>
                 <Input type={"password"} ref={password} placeholder="Senha"/>
                 <Button Text={"Entrar"} onClick={handleSubmit}/>
                </form>
 
             </Content>
-            <Animation>
+            <Clouds/>
+            <CloudsTwo/>
+            <CloudsThree/>
+            <CloudsFour/>
+            <CloudsFive/>
+            <CloudsSix/>
+            <Animation/>
 
-            </Animation>
-            <ThemeSwitcher/>
+            {/* <ThemeSwitcher/> */}
             </>
         }
         </Container>

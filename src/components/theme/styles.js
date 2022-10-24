@@ -7,7 +7,6 @@ export const Button = styled.button`
     border: 1px solid var(--grey400);
     border-radius: 22px;
 
-    color: var(--grey400);
 `;
 
 
