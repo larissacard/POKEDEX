@@ -6,6 +6,8 @@ export const Container = styled.div`
 
     background-color: var(--yellow);
 
+    font-family: 'Poppins', sans-serif;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -48,4 +50,23 @@ export const Logo = styled.div`
     height: 30px;
 
     background-image: url("assets/loguinho.svg");
+`;
+
+export const Button = styled.div`
+    width: 89px;
+    height: 28px;
+
+    border: 1px solid var(--label);
+    border-radius: 8px;
+
+    color: var(--label);
+    font-size: 12px;
+    line-height: 18px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    align-items: center;
+
 `;

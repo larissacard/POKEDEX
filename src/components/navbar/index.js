@@ -1,5 +1,5 @@
 import { React} from "react";
-import { Container, Logo, Navmenu } from "./styles";
+import { Button, Container, Logo, Navmenu } from "./styles";
 import { NavLink } from "react-router-dom";
 
 
@@ -16,15 +16,18 @@ export default function Navbar(){
             <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'inactive')} to ="/favoritos">
                 Favoritos
             </NavLink>
-            <NavLink exact to="/pesquisar">
+            <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'inactive')} to="/pesquisar">
                 Procurar
             </NavLink>
-            <NavLink exact to="/vertodos">
+            <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'inactive')} to="/vertodos">
                 Ver Todos
             </NavLink>
         </Navmenu>
 
-        <button onClick={handleLogout}>Logout</button>
+        <Button onClick={handleLogout}>
+            Logout
+            <img src="assets/icons/logout.svg" style={{"width": "12px", "height": "12px"}}/>
+        </Button>
     </Container>
    )
 };

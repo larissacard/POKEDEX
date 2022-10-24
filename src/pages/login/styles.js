@@ -18,11 +18,10 @@ const FlyingClouds = keyframes`
     margin-left: -1400px;
   }
   100%{
-    margin-left: 1200px;
+    margin-left: 1300px;
 
   }
 `;
-
 export const Clouds = styled.div`
     background-image: url("assets/clouds/clouds2.svg");
     background-size: contain;
@@ -187,7 +186,7 @@ export const Animation = styled.div`
     width: 301px;
     height: 224px;
 
-    margin-top: 577px;
+    margin-top: 65vh;
     margin-right: 282px;
 
 `;

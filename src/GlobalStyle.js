@@ -1,6 +1,16 @@
 import { createGlobalStyle } from "styled-components";
-
+import pixelada from "./font/pixelada/vppixel-simplified-webfont.woff";
+import pixelada2 from "./font/pixelada/vppixel-simplified-webfont.woff2";
 const GlobalStyle = createGlobalStyle`
+    
+    @font-face {
+    font-family: 'pixelada';
+    src: url(${pixelada2}) format('woff2'),
+         url(${pixelada}) format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    }
 
     * {
         margin: 0;
@@ -12,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
         height: 100vh;
         width: 100vw;
         font-family: 'Poppins', sans-serif;
-        background-color: var(--grey500);
+        background-color: var(--grey100);
         overflow: hidden;
     }
 
