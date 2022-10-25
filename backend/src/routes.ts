@@ -12,5 +12,6 @@ routes.use(authMiddleware)
 routes.get('/profile', new UserController().getProfile);
 
 
+
 export default routes;
 
