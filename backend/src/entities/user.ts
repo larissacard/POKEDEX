@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Favorite } from "./favorite";
 
 @Entity('users')
 export class User {
@@ -12,5 +13,8 @@ export class User {
     email: string
     
     @Column({type: 'text'})
-    password: string
+    password: string;   
+
+    @OneToMany(() => Favorite, (favorite) => favorite.user_id)
+    pokes: Favorite[]
 }
