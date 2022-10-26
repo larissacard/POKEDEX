@@ -2,7 +2,7 @@ import { React, useRef, useState } from "react";
 import { Container, Content, Input, Logo, Title, Animation, Clouds, CloudsTwo, CloudsThree, CloudsFour, CloudsFive, CloudsSix } from "./styles";
 import { Button } from "../../components/button";
 import { ThemeSwitcher } from "../../components/theme";
-import Home from "../home";
+import Favorite from "../favorite/index"
 
 export default function Login() {
 
@@ -20,7 +20,7 @@ export default function Login() {
 
     return (
         <Container>
-            { getEmail&&getPassword ? <Home/> :
+            { getEmail&&getPassword ? <Favorite/> :
             <>
             <Content>
                 <Logo/>

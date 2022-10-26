@@ -15,6 +15,8 @@ export const Container = styled.div`
 
     padding-left: 138px;
     padding-right: 138px;
+
+
 `;
 
 export const Navmenu = styled.div`

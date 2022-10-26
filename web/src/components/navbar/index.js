@@ -13,7 +13,7 @@ export default function Navbar(){
     <Container>
         <Logo/>
         <Navmenu>
-            <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'inactive')} to ="/favoritos">
+            <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'inactive')} to ="/home">
                 Favoritos
             </NavLink>
             <NavLink className={({ isActive }) => (isActive ? 'active-link' : 'inactive')} to="/pesquisar">
