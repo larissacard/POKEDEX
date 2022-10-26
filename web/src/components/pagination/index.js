@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonPages, ButtonPass, Container } from "./styles";
+import { ButtonPass, Container, CurrentPages, InactivePage } from "./styles";
 
 export const Pagination = (props) => {
     const {page, totalPages, onLeftClick, onRightClick} = props;
@@ -10,11 +10,23 @@ export const Pagination = (props) => {
         onClick={onLeftClick}>
             <img src="assets/icons/left.svg"/>
         </ButtonPass>
-        {page}
-        <ButtonPages/>
+
+        <CurrentPages >
+            {page}
+        </CurrentPages>
+        <InactivePage >
+            {page + 1}
+        </InactivePage>
+        <InactivePage >
+            {page + 2}
+        </InactivePage>
+        <InactivePage >
+            {page + 3}
+        </InactivePage>
+        
         <ButtonPass
         onClick={onRightClick}>
-        <img src="assets/icons/right.svg"/>
+            <img src="assets/icons/right.svg"/>
         </ButtonPass>
      </Container>   
     )

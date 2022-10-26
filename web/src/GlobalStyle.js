@@ -105,6 +105,11 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
     }
 
+    .curretpage {
+        background-color: #FF3326;
+        color: white;
+    }
+
 `;
 
 export default GlobalStyle;

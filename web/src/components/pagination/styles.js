@@ -9,24 +9,42 @@ export const Container = styled.div`
     justify-content: space-between;
 `;
 
-export const ButtonPages = styled.button`
+export const CurrentPages = styled.div`
     width: 28px;
     height: 28px;
 
-    border: 1px solid var(--grey500);
-    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    color: var(--grey500);
+    border-radius: 50%;
+
+    background-color: #FF3326;
+    color: white;
+
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    
-    :hover{
-        width: 32px;
-        height: 31px;
 
-        border: 1px solid #FF3326;
-    }
+    
+`;
+
+export const InactivePage = styled.div`
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--grey500);
+    color: var(--grey500);
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
 `;
 
 export const ButtonPass = styled.button`
@@ -35,6 +53,10 @@ export const ButtonPass = styled.button`
 
     border: 1px solid var(--grey500);
     border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img{
         width: 16px;
