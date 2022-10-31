@@ -7,11 +7,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 `;
 
 export const CurrentPages = styled.div`
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 31px;
 
     display: flex;
     justify-content: center;
@@ -44,7 +45,16 @@ export const InactivePage = styled.div`
 
     font-weight: 600;
     font-size: 15px;
-    line-height: 22px;
+    line-height: 22px; 
+
+    :hover{
+        width: 32px;
+        height: 31px;
+        background-color: #FF3326;
+        color: white;
+        border: none;
+
+    }
 `;
 
 export const ButtonPass = styled.button`
@@ -58,6 +68,7 @@ export const ButtonPass = styled.button`
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
     img{
         width: 16px;
         height: 16px;

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import pixelada from "./font/pixelada/vppixel-simplified-webfont.woff";
-import pixelada2 from "./font/pixelada/vppixel-simplified-webfont.woff2";
+import pixelada from "../font/pixelada/vppixel-simplified-webfont.woff";
+import pixelada2 from "../font/pixelada/vppixel-simplified-webfont.woff2";
 const GlobalStyle = createGlobalStyle`
     
     @font-face {

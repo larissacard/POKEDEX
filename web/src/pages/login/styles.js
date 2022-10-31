@@ -187,7 +187,7 @@ export const Animation = styled.div`
     height: 224px;
 
     margin-top: 65vh;
-    margin-right: 282px;
+    margin-right: 19.58vw;
 
 `;
  

@@ -2,7 +2,7 @@ import React from "react";
 import { ButtonPass, Container, CurrentPages, InactivePage } from "./styles";
 
 export const Pagination = (props) => {
-    const {page, totalPages, onLeftClick, onRightClick} = props;
+    const {page, onLeftClick, onRightClick, onPlusOneClick, onPlusTwoClick, onPlusThreeClick} = props;
 
     return(
      <Container>
@@ -14,13 +14,13 @@ export const Pagination = (props) => {
         <CurrentPages >
             {page}
         </CurrentPages>
-        <InactivePage >
+        <InactivePage onClick={onPlusOneClick}>
             {page + 1}
         </InactivePage>
-        <InactivePage >
+        <InactivePage onClick={onPlusTwoClick}>
             {page + 2}
         </InactivePage>
-        <InactivePage >
+        <InactivePage onClick={onPlusThreeClick}>
             {page + 3}
         </InactivePage>
         

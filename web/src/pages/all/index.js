@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import { getPokemonData, getPokemon, getPokemons } from "../../api";
 import { Pokedex } from "../../components/pokedex";
 import { Pagination } from "../../components/pagination";
+import { Filter } from "../../components/filter";
 
 
 export default function SeeAll(){
@@ -39,9 +40,28 @@ export default function SeeAll(){
             setPage(page-1)
         }
     }
+
     const onRightClickHandler = () => {
         if(page+1 !== totalPages){
             setPage(page+1)
+        }
+    }
+
+    const onPlusOneClick = () => {
+        if(page+1 !== totalPages){
+            setPage(page+1)
+        }
+    }
+
+    const onPlusTwoClick = () => {
+        if(page+2 !== totalPages){
+            setPage(page+2)
+        }
+    }
+
+    const onPlusThreeClick = () => {
+        if(page+3 !== totalPages){
+            setPage(page+3)
         }
     }
 
@@ -49,6 +69,7 @@ export default function SeeAll(){
     return(
         <Container>
             <Navbar/>
+
             <Pokedex
                 pokemons={pokemons}
                 loading={loading}
@@ -56,39 +77,17 @@ export default function SeeAll(){
                 setPage={setPage}
                 totalPages={totalPages}
             />
-            <Pagination
+            
+            {/* <Pagination
              page={page+1}
-             totalPages={totalPages}
              onLeftClick={onLeftClickHandler}
              onRightClick={onRightClickHandler}
-            />
+             onPlusOneClick={onPlusOneClick}
+             onPlusTwoClick={onPlusTwoClick}
+             onPlusThreeClick={onPlusThreeClick}
+
+            /> */}
 
         </Container>
     )
 }
-
- // const { isLoading, error, data} = useQuery('pokemonsData', () => 
-    //     fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=20').then(res => 
-    //     res.json()
-    //     )
-    // )
-
-    // if (isLoading) return 'Loading...'
-
-    // if (error) return 'deu ruim :/'
-
-    
-    // const promises = data.results.map( async (pokemon) => {
-    //     return pokemon.url
-    // })
-    
-    // const pokemons = [];
-    // for(let i = 0; i < data.results.length; i++){
-    //     pokemons.push(data.results[i].url)
-    // }
-    
-    // for(let i = 0; i < pokemons.length; i++){
-    //     const poke = fetch(pokemons[i]).then(res => res.json());
-    //     const results = Promise.all(promises)
-    //     setPoke(results)
-    // }
