@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/navbar";
 import { Container } from "./styles";
-import { getPokemonData, getPokemon, getPokemons } from "../../api";
+import { getPokemonData, getPokemon, getPokemons } from "../../api's";
 import { Pokedex } from "../../components/pokedex";
 import { Pagination } from "../../components/pagination";
 import { Filter } from "../../components/filter";

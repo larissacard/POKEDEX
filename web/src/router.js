@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/login";
+import { Login } from "./pages/login";
 import Favorite from "./pages/favorite";
 import SearchPage from "./pages/search";
 import SeeAll from "./pages/all";

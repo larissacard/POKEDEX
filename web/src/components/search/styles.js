@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Search } from "../../styles/Icons";
 
 export const SearchWrapper = styled.div`
 
@@ -16,15 +15,4 @@ export const SearchInput = styled.input`
     margin-top: 29px;
 
     padding-left: 20px;
-`;
-
-export const SearchIcon = styled(Search)`
-    width: 27px;
-    height: 27px;
-
-    fill: var(--grey300);
-
-    position: absolute;
-    right: 500px;
-    top: 92px;
 `;

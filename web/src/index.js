@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { QueryClient, QueryClientProvider } from "react-query";
-
-const queryClient = new QueryClient();
+import { AuthProvider } from './context/authProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-  <QueryClientProvider client={queryClient}>
-    <App/>
-  </QueryClientProvider>
+  <React.StrictMode>
+    <AuthProvider>
+      <App/>
+    </AuthProvider>
+  </React.StrictMode>
+    
 );

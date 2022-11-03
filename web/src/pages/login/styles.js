@@ -13,6 +13,12 @@ export const Container = styled.div`
     background-size: cover;
 `;
 
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 33px;
+`;
+
 const FlyingClouds = keyframes`
   0%{
     margin-left: -1400px;
@@ -22,6 +28,8 @@ const FlyingClouds = keyframes`
 
   }
 `;
+
+
 export const Clouds = styled.div`
     background-image: url("assets/clouds/clouds2.svg");
     background-size: contain;
