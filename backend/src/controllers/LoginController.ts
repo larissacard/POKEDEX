@@ -4,10 +4,10 @@ import { BadRequestError, UnauthorizedError } from "../helpers/api-erros";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-export class LoginControler {
-    async login(req: Request, res: Response){
+export class LoginController {
+    async Login(req: Request, res: Response){
         const {email, password} = req.body
-
+        
         const user = await userRepository.findOneBy({ email })
         
         if(!user) {
@@ -25,15 +25,19 @@ export class LoginControler {
         })
 
         const {password: _, ...userLogin} = user
+        console.log("oi")
 
-        return res.json({
+        return res.status(200).json({
             user: userLogin,
             token: token,
         })
+        
     }
-
+    
     async getProfile(req: Request, res: Response){
 
         return res.json(req.user)
     }
+
+    
 }
