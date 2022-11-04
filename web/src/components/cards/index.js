@@ -1,14 +1,37 @@
-import React from "react";
-import { Card, CardBody, CardFooter } from "./styles";
+import React, { useState } from "react";
+import { api } from "../../api";
+import { Card, CardBody, CardFooter, CardHeader } from "./styles";
 
 export const Cards = (props) => {
     const {pokemon} = props;
+    const [fav, setFav] = useState('saved')
+    const [favorites, setFavorites] = useState([])
+
+
+    const handleFavButton = () => {
+        setFav(fav === 'saved' ? 'notSaved' : 'saved');     
+        
+    }
+
+    const HandleSubmit= (e) => {
+        e.preventDefault();
+        api.post("/")
+    }
+
+    
 
     return(
         <Card>
-            <div>
+            <CardHeader>
                 <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
-            </div>
+                <button onClick={handleFavButton}>
+                    {fav === 'saved' ? 
+                            <img src="assets/icons/heart.svg"/>
+                         :
+                            <img src="assets/icons/heart-filled.svg"/>
+                    }
+                </button>
+            </CardHeader>
 
             <CardBody>
                 <h4> { pokemon.name } </h4>

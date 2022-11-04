@@ -25,6 +25,28 @@ export const Card = styled.div`
 `;
 
 export const CardHeader = styled.div`
+    width: 100px;
+    
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30%;
+
+    button {
+        width: 28px;
+        height: 28px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: transparent;
+        border: none;
+
+        > img {
+            width: 28px;
+            height: 28px;
+        }
+    }
 
 `;
 

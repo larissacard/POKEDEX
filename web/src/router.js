@@ -12,7 +12,7 @@ export default function Rout() {
         <BrowserRouter>
                 <Routes>
                     <Route exact path="/" element={<Login/>} />
-                    <Route exact path="/home" element={<Favorite/>} />
+                    <Route exact path="/home/:id" element={<Favorite/>} />
                     <Route exact path="/pesquisar" element={<SearchPage/>} />
                     <Route exact path="/vertodos" element={<SeeAll/>} />
                 </Routes>

@@ -1,6 +1,6 @@
 import { React} from "react";
 import { Button, Container, Logo, Navmenu } from "./styles";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 
 export default function Navbar(){
@@ -9,11 +9,13 @@ export default function Navbar(){
         window.location.href = '/';
     }
 
+    const { id } = useParams();
+
    return(
     <Container>
         <Logo/>
         <Navmenu>
-            <NavLink className={({ isActive }) => (isActive ? 'active-link' : '')} to ="/home">
+            <NavLink className={({ isActive }) => (isActive ? 'active-link' : '')} to ="/home/${id}">
                 Favoritos
             </NavLink>
             <NavLink className={({ isActive }) => (isActive ? 'active-link' : '')} to="/pesquisar">

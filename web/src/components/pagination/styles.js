@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 223px;
+    width: 100%;
     height: 32px;
-    
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 5%;
+    
+    > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        width: 213px;
+    }
 
 `;
 
@@ -62,6 +69,7 @@ export const ButtonPass = styled.button`
     height: 31px;
 
     border: 1px solid var(--grey500);
+    background-color: transparent;
     border-radius: 50%;
     
     display: flex;
@@ -69,6 +77,7 @@ export const ButtonPass = styled.button`
     align-items: center;
 
     cursor: pointer;
+
     img{
         width: 16px;
         height: 16px;

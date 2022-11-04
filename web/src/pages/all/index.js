@@ -13,7 +13,7 @@ export default function SeeAll(){
     const [loading, setLoading] = useState(false);
     const [pokemons, setPokemons] = useState([]);
 
-    const itensPerPage = 20;
+    const itensPerPage = 12;
     const fetchPokemons = async () => {
         try {
             setLoading(true)
@@ -78,7 +78,7 @@ export default function SeeAll(){
                 totalPages={totalPages}
             />
             
-            {/* <Pagination
+             <Pagination
              page={page+1}
              onLeftClick={onLeftClickHandler}
              onRightClick={onRightClickHandler}
@@ -86,7 +86,7 @@ export default function SeeAll(){
              onPlusTwoClick={onPlusTwoClick}
              onPlusThreeClick={onPlusThreeClick}
 
-            /> */}
+            /> 
 
         </Container>
     )

@@ -55,7 +55,7 @@ export const Login = () => {
             setEmail('');
             setPassword('');
             setSuccess(true)
-            setTimeout(() => window.location.href = '/home', 500)
+            setTimeout(() => window.location.href = '/home/', 500)
             localStorage.setItem('token', JSON.stringify(response.data.token))
         }
         catch (err) {
