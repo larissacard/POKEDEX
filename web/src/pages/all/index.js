@@ -31,6 +31,8 @@ export default function SeeAll(){
         }
     };
 
+    console.log(pokemons)
+
     useEffect(() => {
         fetchPokemons();
     },[page])

@@ -19,7 +19,6 @@ export const Search = (props) => {
         onSearch(search)
     }
 
-    console.log(onChangeHandler)
 
    return (
     <SearchWrapper>

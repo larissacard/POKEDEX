@@ -1,4 +1,5 @@
 import { React, useContext, useEffect, useRef, useState } from "react";
+import jwtDecode from "jwt-decode";
 import { 
     Container, 
     Form,
@@ -38,6 +39,8 @@ export const Login = () => {
         setErrMsg('');
     }, [email, password]);
 
+    
+
     const handleSubmit = async (e) =>{
         e.preventDefault(); 
         try {
@@ -55,8 +58,12 @@ export const Login = () => {
             setEmail('');
             setPassword('');
             setSuccess(true)
-            setTimeout(() => window.location.href = '/home/', 500)
             localStorage.setItem('token', JSON.stringify(response.data.token))
+            const myToken = localStorage.getItem("token")
+            const decodeToken = jwtDecode(myToken)
+    
+            const id  = decodeToken.id; 
+            setTimeout(() => window.location.href = `/home/${id}`, 500)
         }
         catch (err) {
             if(!err?.response){

@@ -12,13 +12,13 @@ export default function SearchPage(){
 
     const onSearchHandler = async (pokemon) => {
         const result = await searchPokemon(pokemon)
-        console.log(result)
         if(!result) {
             setNotFound(true)
         } else {
             setPokemons([result])
         }
     }
+    console.log(pokemons)
 
 
 

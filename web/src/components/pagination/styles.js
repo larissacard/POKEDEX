@@ -30,6 +30,8 @@ export const CurrentPages = styled.div`
     background-color: #FF3326;
     color: white;
 
+    cursor: pointer;
+
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
@@ -49,6 +51,8 @@ export const InactivePage = styled.div`
 
     border: 1px solid var(--grey500);
     color: var(--grey500);
+
+    cursor: pointer;
 
     font-weight: 600;
     font-size: 15px;
