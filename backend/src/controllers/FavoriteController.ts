@@ -50,12 +50,21 @@ export class FavoriteController {
     }
 
     async listFavorites (req: Request, res: Response){
+
+        const { user_id } = req.params
+
+        const user = await userRepository.findOneBy({id: Number(user_id)})
+
+        if(!user){
+            throw new BadRequestError('User não foi encontrado')
+        }
         
-        const pokemons = await favoriteRepository.find({
-            relations: {
-                user_id: true
+        const pokemons = await favoriteRepository.find({ where:
+            {
+                user_id: user,
             }
         })
+
 
         if(!pokemons){
             throw new BadRequestError('Erro erro erro')
