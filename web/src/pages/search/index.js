@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import Navbar from "../../components/navbar";
-import { Search } from "../../components/search";
 import { Container } from "./styles";
 import { searchPokemon } from "../../api's";
 import { Pokedex } from "../../components/pokedex";
@@ -9,8 +8,14 @@ import { myLoader } from "./loader";
 export default function SearchPage(){
     const [pokemons, setPokemons] = useState([]);
     const [notFound, setNotFound] = useState(false);
+    const [search, setSearch] = useState('')
 
-    const onSearchHandler = async (pokemon) => {
+    useEffect(() => {
+        searchPokemon();
+        
+      }, []);
+
+    const aa = async (pokemon) => {
         const result = await searchPokemon(pokemon)
         if(!result) {
             setNotFound(true)
@@ -18,51 +23,30 @@ export default function SearchPage(){
             setPokemons([result])
         }
     }
-    console.log(pokemons)
 
-
-
-    // const [loader, setLoader] = useState(true)
-
-    // useEffect(() => {
-    //     const t = setTimeout(() => {
-    //         setLoader(false)
-    //     }, 2300);
-    //     return () => {
-    //         clearTimeout(t);
-    //     }
-    // }, [])
+    const pokemonFilter = (name) => {
+        const filteredPokemons = [];
+        if (name === "") {
+            searchPokemon();
+        }
+        for (var i in pokemons) {
+          if (pokemons[i].data.name.includes(name)) {
+            filteredPokemons.push(pokemons[i]);
+          }
+        }
+    
+        setPokemons(filteredPokemons);
+      };
 
     
     return(
         <Container>
             <Navbar/>
-            <Search onSearch={onSearchHandler}/>
+            <input pokemonFilter={pokemonFilter}/>
             { notFound ? 
              (<p>Pesquisa certo aé</p>) : 
             (
             <Pokedex pokemons={pokemons}/>)}
-            {/* { notFound ? 
-            (
-                <>
-                    <p>Pesquisa certo animal</p>
-                </>
-            ) : 
-            (
-                <>
-                    {loader ? 
-                        (<myLoader/>) : 
-                        (<Pokedex pokemons={pokemons}/>)
-                    }
-                </>
-            )} */}
         </Container>
     )
 }
-
-{/*  */}
-
-// {notFound ? 
-//     (<p>Pesquisa certo aé</p>) : 
-//     (
-//     <Pokedex pokemons={pokemons}/>)}

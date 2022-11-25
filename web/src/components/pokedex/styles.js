@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-    height: 510px;
-    width: 1300px;
+    height: auto;
+    width: 80%;
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);

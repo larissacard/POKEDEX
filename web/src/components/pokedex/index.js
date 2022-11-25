@@ -3,7 +3,7 @@ import { Container } from './styles'
 
 
 export const Pokedex = (props) => {
-    const { pokemons, loading, page, setPage, totalPages } = props;
+    const { pokemons, loading, page, setPage, totalPages, name } = props;
 
     return (
         <Container>

@@ -51,7 +51,6 @@ export const Login = () => {
                     withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data))
 
             const token = response?.data?.token;
             setAuth({ email, password, token})
@@ -92,6 +91,7 @@ export const Login = () => {
                     ref={userRef}
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
+                    placeholder={"Email"}
                     required
                     />
                     <Input 
@@ -99,6 +99,7 @@ export const Login = () => {
                     ref={userRef}
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
+                    placeholder={"Senha"}
                     required
                     />
                     <Button Text={"Entrar"}/>

@@ -1,32 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { api } from "../../api";
 import { Card, CardBody, CardFooter, CardHeader } from "./styles";
 import jwtDecode from "jwt-decode";
+import { json } from "react-router-dom";
+
 
 export const Cards = (props) => {
     const {pokemon} = props;
     const [fav, setFav] = useState('saved')
-
-
+    const [pokeId, setPokeId] = useState()
+    
     const myToken = localStorage.getItem("token")
     const decodeToken = jwtDecode(myToken)
     
+    const handleFavButton = () => {
+        setFav(fav === 'saved' ? 'notSaved' : 'saved'); 
+          
+    }
+    
     const id  = decodeToken.id;
 
-    const handleFavButton = async (e) => {
-        setFav(fav === 'saved' ? 'notSaved' : 'saved');   
-
+    function post(e){
+        e.preventDefault();
+        api.post(`/profile/${id}/pokes`, {
+            pokemon_id: pokemon.id,
+        }).catch(err => {
+            console.log(err)
+        })
     }
-
-
-    
 
     return(
         <Card>
             <CardHeader>
                 <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
                 <button 
-                onClick={handleFavButton} 
+                onClick={(e) => {handleFavButton(); post(e)}} 
                 >
                     {fav === 'saved' ? 
                             <img src="assets/icons/heart.svg"/>
@@ -57,4 +65,5 @@ export const Cards = (props) => {
         </Card>
 
     )
+
 }
