@@ -97,3 +97,7 @@ export const CardFooter = styled.div`
         border: none;
     }
 `;
+
+export const Heart = styled.img`
+    background-image: url('assets/icons/heart.svg');
+`;

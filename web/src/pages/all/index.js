@@ -5,6 +5,9 @@ import { getPokemonData, getPokemon, getPokemons } from "../../api's";
 import { Pokedex } from "../../components/pokedex";
 import { Pagination } from "../../components/pagination";
 import { Filter } from "../../components/filter";
+import FavoriteContext, { FavoriteProvider } from "../../context/FavoritesContext";
+
+const FavoriteKey = "f";
 
 
 export default function SeeAll(){
@@ -12,6 +15,7 @@ export default function SeeAll(){
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(false);
     const [pokemons, setPokemons] = useState([]);
+    const [favorites, setFavorites] = useState([]);
 
     const itensPerPage = 12;
     const fetchPokemons = async () => {
@@ -67,28 +71,54 @@ export default function SeeAll(){
     }
 
 
+    const loadFavoritePokemons = () => {
+        const pokes = JSON.parse(window.localStorage.getItem(FavoriteKey)) || []
+        setFavorites(pokes)
+    }
+
+    useEffect(() => {
+        loadFavoritePokemons()
+    },[])
+
+    const updateFavoritePokemons = (name) => {
+        const updateFavorites = [...favorites]
+        const favoriteIndex = favorites.indexOf(name)
+        if(favoriteIndex >= 0){
+            updateFavorites.splice(favoriteIndex, 1);
+        } else{
+            updateFavorites.push(name)
+        }
+
+        window.localStorage.setItem(FavoriteKey, JSON.stringify(updateFavorites))
+        setFavorites(updateFavorites)
+    }
+
+
     return(
-        <Container>
-            <Navbar/>
+        <FavoriteProvider
+            value={{favoritePokemons: favorites, updateFavoritePokemons: updateFavoritePokemons}}>
+            <Container>
+                <Navbar/>
 
-            <Pokedex
-                pokemons={pokemons}
-                loading={loading}
-                page={page}
-                setPage={setPage}
-                totalPages={totalPages}
-            />
-            
-             <Pagination
-             page={page+1}
-             onLeftClick={onLeftClickHandler}
-             onRightClick={onRightClickHandler}
-             onPlusOneClick={onPlusOneClick}
-             onPlusTwoClick={onPlusTwoClick}
-             onPlusThreeClick={onPlusThreeClick}
+                <Pokedex
+                    pokemons={pokemons}
+                    loading={loading}
+                    page={page}
+                    setPage={setPage}
+                    totalPages={totalPages}
+                />
+                
+                <Pagination
+                page={page+1}
+                onLeftClick={onLeftClickHandler}
+                onRightClick={onRightClickHandler}
+                onPlusOneClick={onPlusOneClick}
+                onPlusTwoClick={onPlusTwoClick}
+                onPlusThreeClick={onPlusThreeClick}
 
-            /> 
+                /> 
 
-        </Container>
+            </Container>
+        </FavoriteProvider>
     )
 }
