@@ -9,9 +9,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, CardComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, CardComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
