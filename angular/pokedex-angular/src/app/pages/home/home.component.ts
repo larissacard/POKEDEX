@@ -37,7 +37,7 @@ export class HomeComponent {
   listPokemonsByType(type: string): void {
     this.pokemons = [];
     this.pokemonsService.listPokemonsByType(type).subscribe((resp) => {
-      resp.pokemon.forEach((pokemon: any) => {
+      resp.pokemon.slice(0, 12).forEach((pokemon: any) => {
         this.pokemons.push(pokemon.pokemon);
       });
     });

@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { HorizontalScrollDirective } from './components/filter/horizontal-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FilterComponent } from './components/filter/filter.component';
     CardComponent,
     NavbarComponent,
     FilterComponent,
+    HorizontalScrollDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,14 @@
 .filters-container {
   display: flex;
   width: 1165px;
-  overflow: hidden;
+  overflow-x: scroll;
 
   padding: 0;
   gap: 8px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   li {
     display: flex;
