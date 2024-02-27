@@ -15,7 +15,7 @@ export class CardComponent {
   constructor(private pokemonsService: PokemonsService) {}
 
   getPoke(poke: Pokemon) {
-    this.pokemonsService.getPokemon(poke.url).subscribe((resp) => {
+    this.pokemonsService.getPokemon(poke.name).subscribe((resp) => {
       this.pokemonInfo = resp;
       this.pokeTypes = resp.types.map((type: any) => type.type.name);
     });

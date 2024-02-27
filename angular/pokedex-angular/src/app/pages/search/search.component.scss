@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
+
+  &__body {
+    ul {
+ 
+      margin-top: 38px;
+      padding: 0;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 35px;
+
+      text-decoration: none;
+
+      li {
+        display: flex;
+        text-decoration: none;
+      }
+    }
+  }
+}

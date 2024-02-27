@@ -10,13 +10,13 @@ export class PokemonsService {
   constructor(private httpClient: HttpClient) {}
 
   listPokemons(): Observable<any> {
-    const url = '/pokemon?limit=12';
+    const url = '/pokemon?limit=12&offset=0';
     return this.httpClient.get(this.baseUrl + url);
   }
 
-  getPokemon(url: string): Observable<any> {
-    const urlApi = url;
-    return this.httpClient.get(urlApi);
+  getPokemon(name: string): Observable<any> {
+    const urlApi = `/pokemon/${name}`;
+    return this.httpClient.get(this.baseUrl + urlApi);
   }
 
   listPokemonsType(): Observable<any> {

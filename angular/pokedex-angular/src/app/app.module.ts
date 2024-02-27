@@ -1,17 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule, NgClass } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { CommonModule, NgClass } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './pages/home/home.component';
 import { CardComponent } from './components/card/card.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { HorizontalScrollDirective } from './components/filter/horizontal-scroll.directive';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HorizontalScrollDirective } from './components/filter/horizontal-scroll
     NavbarComponent,
     FilterComponent,
     HorizontalScrollDirective,
+    SearchBarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+form {
+  margin-top: 29px;
+
+  input {
+    width: 765px;
+
+    border-radius: 8px;
+    border: 1px solid var(--grey-200);
+
+    padding: 16px 0 16px 20px;
+
+    ::placeholder {
+      color: var(--grey-300);
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 95px;
+    right: 590px;
+  }
+}

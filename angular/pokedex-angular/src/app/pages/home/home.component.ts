@@ -21,6 +21,7 @@ interface ServiceController<T = any> {
 export class HomeComponent {
   pokemons: Pokemon[] = [];
   typeFilter!: PokemonType;
+  pokemonName: string = '';
 
   constructor(
     private pokemonsService: PokemonsService,
