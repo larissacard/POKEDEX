@@ -5,7 +5,7 @@
     <app-filter (selectedType)="select($event)"></app-filter>
   </div>
 
-  <div class="poke-wrapper">
+  <div class="container__body">
     <ul>
       <li *ngFor="let pokemon of pokemons">
         <app-card [pokemon]="pokemon"></app-card>
