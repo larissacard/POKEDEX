@@ -2,7 +2,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 
   width: 100%;
@@ -31,7 +31,7 @@ nav {
         font-size: 12px;
         line-height: 18px;
 
-        color: var(--grey-500);
+        color: #343232;
 
         text-decoration: none;
       }
@@ -58,6 +58,7 @@ nav {
       justify-content: space-around;
       align-items: center;
 
+      color: #343232;
       border: 1px solid #343232;
       border-radius: 8px;
 
@@ -69,10 +70,17 @@ nav {
       letter-spacing: 0em;
       text-align: left;
 
+      cursor: pointer;
+
       img {
         height: 12px;
         width: 12px;
       }
+    }
+
+    button:hover {
+      font-weight: 600;
+      border: 2px solid #343232;
     }
   }
 }

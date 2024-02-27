@@ -13,4 +13,6 @@ export class NavbarComponent {
     localStorage.removeItem('user');
     this.router.navigate(['/']);
   }
+
+  
 }

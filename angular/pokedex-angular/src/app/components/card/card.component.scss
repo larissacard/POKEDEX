@@ -45,7 +45,7 @@
       height: 20px;
 
       font-weight: 500;
-      font-size: 12px;
+      font-size: 10px;
       line-height: 12px;
       text-align: center;
 
@@ -68,7 +68,7 @@
       background-color: var(--blue);
     }
 
-    .eletric {
+    .electric {
       color: var(--grey-500);
       background-color: var(--yellow);
     }
@@ -124,15 +124,24 @@
       width: 147px;
       height: 32px;
 
-      color: var(--grey-500);
       font-size: 10px;
       font-weight: 500;
       line-height: 15px;
       text-align: center;
+      color: var(--grey-500);
 
       border-radius: 8px;
       border: none;
       background-color: var(--yellow);
+
+      cursor: pointer;
+    }
+
+    button:hover {
+      font-weight: 600;
+      color: var(--grey-500);
+
+      background-color: #f8c506;
     }
   }
 }

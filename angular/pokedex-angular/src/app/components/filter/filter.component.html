@@ -1,0 +1,11 @@
+<ul class="filters-container">
+  <li *ngFor="let type of pokemonTypes">
+    <button
+      class="filters-container__button"
+      [ngClass]="{ 'filters-container__button--selected': type.selected }"
+      (click)="onSelected(type)"
+    >
+      {{ type.name | titlecase }}
+    </button>
+  </li>
+</ul>

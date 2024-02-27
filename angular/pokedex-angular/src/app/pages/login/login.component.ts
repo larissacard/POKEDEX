@@ -21,7 +21,6 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   OnSingUp() {
-    console.log('clickou');
     this.authService.login(this.userLogin);
   }
 }

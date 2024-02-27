@@ -1,17 +1,23 @@
 <div class="card-container">
-    <div class="card-container__header">
-      <img [src]="pokemonInfo?.sprites?.front_default" [alt]="pokemonInfo?.name" />
-    </div>
-  
-    <div class="card-container__body">
-      <span class="card-container__name">{{ pokemonInfo?.name }}</span>
-      <span class="card-container__id">ID: {{ pokemonInfo?.id }}</span>
-      <div class="card-container__info">
-        <span [ngClass]="type" *ngFor="let type of pokeTypes">{{ type }}</span>
-      </div>
-    </div>
-    <div class="card-container__footer">
-      <button>Ver Detalhes</button>
+  <div class="card-container__header">
+    <img
+      [src]="pokemonInfo?.sprites?.front_default"
+      [alt]="pokemonInfo?.name"
+    />
+  </div>
+
+  <div class="card-container__body">
+    <span class="card-container__name">{{
+      pokemonInfo?.name | titlecase
+    }}</span>
+    <span class="card-container__id">ID: {{ pokemonInfo?.id }}</span>
+    <div class="card-container__info">
+      <span [ngClass]="type" *ngFor="let type of pokeTypes">{{
+        type | titlecase
+      }}</span>
     </div>
   </div>
-  
+  <div class="card-container__footer">
+    <button>Ver Detalhes</button>
+  </div>
+</div>

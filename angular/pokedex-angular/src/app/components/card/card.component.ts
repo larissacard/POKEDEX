@@ -17,7 +17,6 @@ export class CardComponent {
   getPoke(poke: Pokemon) {
     this.pokemonsService.getPokemon(poke.url).subscribe((resp) => {
       this.pokemonInfo = resp;
-      console.log(resp.types);
       this.pokeTypes = resp.types.map((type: any) => type.type.name);
     });
   }

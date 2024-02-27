@@ -6,15 +6,26 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class PokemonsService {
+  baseUrl = 'https://pokeapi.co/api/v2';
   constructor(private httpClient: HttpClient) {}
 
   listPokemons(): Observable<any> {
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=12';
-    return this.httpClient.get(url);
+    const url = '/pokemon';
+    return this.httpClient.get(this.baseUrl + url);
   }
 
   getPokemon(url: string): Observable<any> {
     const urlApi = url;
     return this.httpClient.get(urlApi);
+  }
+
+  listPokemonsType(): Observable<any> {
+    const url = `/type`;
+    return this.httpClient.get(this.baseUrl + url);
+  }
+
+  listPokemonsByType(type: string): Observable<any> {
+    const urlApi = `/type/${type}`;
+    return this.httpClient.get(this.baseUrl + urlApi);
   }
 }
