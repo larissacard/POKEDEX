@@ -51,46 +51,8 @@
 
       border: none;
       border-radius: 8px;
-    }
 
-    .fire {
       color: var(--white);
-      background-color: var(--danger);
-    }
-
-    .grass {
-      color: var(--white);
-      background-color: var(--success);
-    }
-
-    .water {
-      color: var(--white);
-      background-color: var(--blue);
-    }
-
-    .electric {
-      color: var(--grey-500);
-      background-color: var(--yellow);
-    }
-
-    .normal {
-      color: var(--white);
-      background-color: var(--grey-300);
-    }
-
-    .flying {
-      color: var(--grey-500);
-      background-color: #7bdbff;
-    }
-
-    .poison {
-      color: var(--white);
-      background-color: #ad26ff;
-    }
-
-    .bug {
-      color: var(--white);
-      background-color: #9ac94e;
     }
   }
 

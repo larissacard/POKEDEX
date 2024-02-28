@@ -1,0 +1,99 @@
+<div class="modal">
+  <div class="modal__header">
+    <span>Detalhes</span>
+    <button (click)="togglerModal()">
+      <img src="../../../assets/x.svg" alt="close icon" />
+    </button>
+  </div>
+  <div class="modal__divider"></div>
+  <div class="modal__body">
+    <span class="modal__title">{{ pokemonDetails?.name | titlecase }}</span>
+    <div class="modal__photos">
+      <div>
+        <img [src]="pokemonDetails?.sprites.front_default" alt="" />
+      </div>
+      <div>
+        <img [src]="pokemonDetails?.sprites.back_default" alt="" />
+      </div>
+    </div>
+    <div class="modal__details">
+      <span>{{ pokemonDetails?.height }}m</span>
+      <span>{{ pokemonDetails?.weight }}kg</span>
+    </div>
+    <div class="modal__types">
+      <span
+        [ngClass]="type.type.name"
+        *ngFor="let type of pokemonDetails?.types"
+      >
+        {{ type.type.name | titlecase }}
+      </span>
+    </div>
+    <div class="modal__statistic">
+      <span>Estatisticas</span>
+      <div class="statistic__item">
+        <span>HP</span>
+        <div class="progress-bar">
+          <progress
+            [value]="pokemonDetails?.stats[0].base_stat"
+            max="100"
+          ></progress>
+        </div>
+        {{ pokemonDetails?.stats[0].base_stat }}
+      </div>
+      <div class="statistic__item">
+        <span>ATK</span>
+        <div class="progress-bar">
+          <progress
+            [value]="pokemonDetails?.stats[1].base_stat"
+            max="100"
+          ></progress>
+        </div>
+        {{ pokemonDetails?.stats[1].base_stat }}
+      </div>
+      <div class="statistic__item">
+        <span>DEF</span>
+        <div class="progress-bar">
+          <progress
+            [value]="pokemonDetails?.stats[2].base_stat"
+            max="100"
+          ></progress>
+        </div>
+        {{ pokemonDetails?.stats[2].base_stat }}
+      </div>
+      <div class="statistic__item">
+        <span>S.ATK</span>
+        <div class="progress-bar">
+          <progress
+            [value]="pokemonDetails?.stats[3].base_stat"
+            max="100"
+          ></progress>
+        </div>
+        {{ pokemonDetails?.stats[3].base_stat }}
+      </div>
+      <div class="statistic__item">
+        <span>S.DEF</span>
+        <div class="progress-bar">
+          <progress
+            [value]="pokemonDetails?.stats[4].base_stat"
+            max="100"
+          ></progress>
+        </div>
+        {{ pokemonDetails?.stats[4].base_stat }}
+      </div>
+      <div class="statistic__item">
+        <span>SPD</span>
+        <div class="progress-bar">
+          <progress
+            [value]="pokemonDetails?.stats[5].base_stat"
+            max="100"
+          ></progress>
+        </div>
+        {{ pokemonDetails?.stats[5].base_stat }}
+      </div>
+    </div>
+  </div>
+  <div class="modal__footer">
+    <button>Adicionar aos favoritos</button>
+  </div>
+</div>
+<div class="modal-overlay"></div>

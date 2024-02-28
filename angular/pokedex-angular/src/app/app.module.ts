@@ -14,6 +14,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SearchComponent } from './pages/search/search.component';
+import { DetailsModalComponent } from './components/details-modal/details-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SearchComponent } from './pages/search/search.component';
     HorizontalScrollDirective,
     SearchBarComponent,
     SearchComponent,
+    DetailsModalComponent,
   ],
   imports: [
     BrowserModule,

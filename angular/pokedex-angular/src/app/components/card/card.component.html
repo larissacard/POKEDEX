@@ -18,6 +18,11 @@
     </div>
   </div>
   <div class="card-container__footer">
-    <button>Ver Detalhes</button>
+    <button (click)="onOpenModal()">Ver Detalhes</button>
   </div>
 </div>
+
+<ng-container *ngIf="showModal">
+  <app-details-modal (closeModal)="onCloseModal()" [pokemon]="pokemon"></app-details-modal>
+ 
+</ng-container>

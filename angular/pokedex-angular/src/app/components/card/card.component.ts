@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/pages/home/home.component';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 
@@ -7,21 +7,32 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   @Input() pokemon!: Pokemon;
   pokemonInfo: any = {};
   pokeTypes: string[] = [];
+  showModal: boolean = false;
 
   constructor(private pokemonsService: PokemonsService) {}
 
-  getPoke(poke: Pokemon) {
+  getPoke(poke: Pokemon): void {
     this.pokemonsService.getPokemon(poke.name).subscribe((resp) => {
       this.pokemonInfo = resp;
       this.pokeTypes = resp.types.map((type: any) => type.type.name);
     });
   }
 
-  ngOnInit() {
+  onOpenModal(): void {
+    this.showModal = true;
+  }
+
+  onCloseModal(): void {
+    console.log('clicado');
+
+    this.showModal = false;
+  }
+
+  ngOnInit(): void {
     this.getPoke(this.pokemon);
   }
 }

@@ -13,6 +13,28 @@
   --grey-200: #d2d4d6;
   --grey-100: #f5f7fa;
   --white: #ffffff;
+
+  //Type Colors
+
+  --normal: #a8a878;
+  --fire: #f08030;
+  --water: #6890f0;
+  --electric: #f8d030;
+  --grass: #78c850;
+  --ice: #98d8d8;
+  --fighting: #c03028;
+  --poison: #a040a0;
+  --ground: #e0c068;
+  --flying: #a890f0;
+  --psychic: #f85888;
+  --bug: #a8b820;
+  --rock: #b8a038;
+  --ghost: #705898;
+  --dragon: #7038f8;
+  --dark: #705848;
+  --steel: #b8b8d0;
+  --fairy: #ee99ac;
+  --unknown: #68a090;
 }
 
 body {
@@ -27,4 +49,81 @@ body {
   background-color: var(--grey-100);
 
   overflow: hidden;
+}
+
+.normal {
+  background-color: var(--grey-300);
+}
+
+.fire {
+  background-color: var(--fire);
+}
+
+.water {
+  background-color: var(--water);
+}
+
+.electric {
+  background-color: var(--electric);
+}
+
+.grass {
+  background-color: var(--grass);
+}
+
+.ice {
+  background-color: var(--ice);
+}
+
+.fighting {
+  background-color: var(--fighting);
+}
+
+.poison {
+  background-color: var(--poison);
+}
+
+.ground {
+  background-color: var(--ground);
+}
+
+.flying {
+  background-color: var(--flying);
+}
+
+.psychic {
+  background-color: var(--psychic);
+}
+
+.bug {
+  background-color: var(--bug);
+}
+
+.rock {
+  background-color: var(--rock);
+}
+
+.ghost {
+  background-color: var(--ghost);
+}
+
+.dragon {
+  background-color: var(--dragon);
+}
+
+.dark,
+.shadow {
+  background-color: var(--dark);
+}
+
+.steel {
+  background-color: var(--steel);
+}
+
+.fairy {
+  background-color: var(--fairy);
+}
+
+.unknown {
+  background-color: var(--unknown);
 }
