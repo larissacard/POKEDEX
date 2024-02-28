@@ -22,6 +22,7 @@ export class HomeComponent {
   pokemons: Pokemon[] = [];
   typeFilter!: PokemonType;
   pokemonName: string = '';
+  limit: number = 12;
 
   constructor(
     private pokemonsService: PokemonsService,
@@ -30,7 +31,7 @@ export class HomeComponent {
 
   listPokemons(): void {
     this.pokemons = [];
-    this.pokemonsService.listPokemons().subscribe((resp) => {
+    this.pokemonsService.listPokemons(this.limit).subscribe((resp) => {
       this.pokemons = resp.results;
     });
   }

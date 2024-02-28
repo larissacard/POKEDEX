@@ -10,11 +10,12 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class SearchComponent implements OnInit {
   pokemons: Pokemon[] = [];
   filteredPokemons: Pokemon[] = [];
+  limit: number = 1000;
 
   constructor(private pokemonsService: PokemonsService) {}
 
   listPokemons(): void {
-    this.pokemonsService.listPokemons().subscribe((resp) => {
+    this.pokemonsService.listPokemons(this.limit).subscribe((resp) => {
       this.pokemons = resp.results;
     });
   }

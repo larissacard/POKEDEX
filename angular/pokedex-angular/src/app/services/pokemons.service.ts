@@ -9,8 +9,8 @@ export class PokemonsService {
   baseUrl = 'https://pokeapi.co/api/v2';
   constructor(private httpClient: HttpClient) {}
 
-  listPokemons(): Observable<any> {
-    const url = '/pokemon?limit=12&offset=0';
+  listPokemons(limit: number): Observable<any> {
+    const url = `/pokemon?limit=${limit}&offset=0`;
     return this.httpClient.get(this.baseUrl + url);
   }
 
