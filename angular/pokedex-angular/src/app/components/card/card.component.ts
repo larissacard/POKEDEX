@@ -18,6 +18,7 @@ export class CardComponent implements OnInit {
   getPoke(poke: Pokemon): void {
     this.pokemonsService.getPokemon(poke.name).subscribe((resp) => {
       this.pokemonInfo = resp;
+      console.log(this.pokemonInfo);
       this.pokeTypes = resp.types.map((type: any) => type.type.name);
     });
   }
@@ -27,8 +28,6 @@ export class CardComponent implements OnInit {
   }
 
   onCloseModal(): void {
-    console.log('clicado');
-
     this.showModal = false;
   }
 

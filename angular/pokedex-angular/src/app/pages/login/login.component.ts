@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service.service';
 
 export interface User {
@@ -18,7 +17,7 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   OnSingUp() {
     this.authService.login(this.userLogin);

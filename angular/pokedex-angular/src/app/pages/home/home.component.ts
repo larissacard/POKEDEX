@@ -7,12 +7,6 @@ export interface Pokemon {
   url: string;
 }
 
-interface ServiceController<T = any> {
-  data: any[];
-  service: T;
-  method: keyof T;
-}
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -45,7 +39,7 @@ export class HomeComponent {
     });
   }
 
-  select(event: PokemonType): void {
+  onSelect(event: PokemonType): void {
     if (event && event.name !== 'Todos') {
       this.typeFilter = event;
       this.listPokemonsByType(this.typeFilter.name);
