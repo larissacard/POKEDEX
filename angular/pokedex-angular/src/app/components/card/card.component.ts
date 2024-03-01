@@ -12,11 +12,12 @@ export class CardComponent implements OnInit {
   pokemonInfo: any = {};
   pokeTypes: string[] = [];
   showModal: boolean = false;
+  isFavorite: boolean = false;
 
   constructor(private pokemonsService: PokemonsService) {}
 
-  getPoke(poke: Pokemon): void {
-    this.pokemonsService.getPokemon(poke.name).subscribe((resp) => {
+  getPoke(pokemon: Pokemon): void {
+    this.pokemonsService.getPokemon(pokemon.name).subscribe((resp) => {
       this.pokemonInfo = resp;
       console.log(this.pokemonInfo);
       this.pokeTypes = resp.types.map((type: any) => type.type.name);
@@ -31,7 +32,34 @@ export class CardComponent implements OnInit {
     this.showModal = false;
   }
 
+  favoritePokemon(pokemon: Pokemon): void {
+    this.isFavorite = !this.isFavorite;
+    const existingFavorites = JSON.parse(
+      localStorage.getItem('pokemons') || '[]'
+    );
+    if (this.isFavorite) {
+      existingFavorites.push(pokemon);
+      localStorage.setItem('pokemons', JSON.stringify(existingFavorites));
+    } else {
+      const updatedFavorites = existingFavorites.filter(
+        (favPokemon: Pokemon) => favPokemon.name !== pokemon.name
+      );
+      localStorage.setItem('pokemons', JSON.stringify(updatedFavorites));
+    }
+    console.log(JSON.parse(localStorage.getItem('pokemons') || '[]'));
+  }
+
+  checkIfPokemonIsFavorited(): void {
+    const existingFavorites = JSON.parse(
+      localStorage.getItem('pokemons') || '[]'
+    );
+    this.isFavorite = existingFavorites.some(
+      (favPokemon: Pokemon) => favPokemon.name === this.pokemon.name
+    );
+  }
+
   ngOnInit(): void {
     this.getPoke(this.pokemon);
+    this.checkIfPokemonIsFavorited();
   }
 }

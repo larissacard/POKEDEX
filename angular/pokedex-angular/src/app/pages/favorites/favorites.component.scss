@@ -1,0 +1,28 @@
+.favorites-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    margin-top: 38px;
+    display: flex;
+    justify-self: flex-start;
+    width: 1165px;
+  }
+
+  &__body {
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 35px;
+
+    text-decoration: none;
+
+    li {
+      display: flex;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,4 +1,13 @@
 <div class="card-container">
+  <div class="card-container__favorite">
+    <button *ngIf="!isFavorite" (click)="favoritePokemon(pokemon)">
+      <img src="../../../assets/heart.svg" alt="" />
+    </button>
+
+    <button *ngIf="isFavorite" (click)="favoritePokemon(pokemon)">
+      <img src="../../../assets/heart-full.svg" alt="" />
+    </button>
+  </div>
   <div class="card-container__header">
     <img
       [src]="pokemonInfo?.sprites?.front_default"
@@ -23,5 +32,8 @@
 </div>
 
 <ng-container *ngIf="showModal">
-  <app-details-modal (closeModal)="onCloseModal()" [pokemon]="pokemon"></app-details-modal>
+  <app-details-modal
+    (closeModal)="onCloseModal()"
+    [pokemon]="pokemon"
+  ></app-details-modal>
 </ng-container>

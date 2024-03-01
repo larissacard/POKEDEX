@@ -1,5 +1,5 @@
 .card-container {
-  width: 165px;
+  max-width: 165px;
   height: 236px;
 
   display: flex;
@@ -12,6 +12,29 @@
 
   background-color: var(--white);
   box-shadow: 0px 2px 16px 0px #0000000d;
+
+  padding: 11px 9px 14px 9px;
+  &__favorite {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      display: flex;
+      align-items: center;
+      
+      background-color: transparent;
+      border: none;
+      
+      cursor: pointer;
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
 
   &__header {
     width: 100%;
@@ -81,6 +104,8 @@
 
     display: flex;
     justify-content: center;
+
+    margin-top: 16px;
 
     button {
       width: 147px;

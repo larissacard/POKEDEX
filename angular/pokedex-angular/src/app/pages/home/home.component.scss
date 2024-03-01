@@ -11,11 +11,11 @@
 
   &__header {
     display: flex;
-    width: 1165px;
+    width: 1166px;
 
-    &-filters {
+    app-filter {
       display: flex;
-      width: 1195px;
+
       overflow: hidden;
       text-decoration: none;
 
@@ -32,6 +32,8 @@
   }
 
   &__body {
+    width: 1166px;
+
     ul {
       margin-top: 38px;
       padding: 0;

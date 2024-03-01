@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<div class="favorites-container">
+  <div class="favorites-container__header">
+    <h2>Olá, você tem {{ pokemons.length }} pokémon salvo!</h2>
+  </div>
+  <ul class="favorites-container__body">
+    <li *ngFor="let pokemon of pokemons">
+      <app-card [pokemon]="pokemon"></app-card>
+    </li>
+  </ul>
+</div>

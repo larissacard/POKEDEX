@@ -1,11 +1,15 @@
-<nav>
-  <a class="nav-logo" routerLink="/home">
+<nav class="nav-container">
+  <a class="nav-container__logo" routerLink="/home">
     <img src="../../../assets/image 4.svg" alt="logo nav" />
   </a>
 
-  <ul class="nav-wrapper">
+  <ul class="nav-container__wrapper">
     <li>
-      <a href="">Favoritos</a>
+      <a routerLinkActive="active-link" routerLink="/favorites" class="nav-item"
+        >Favoritos
+
+        <span>{{ favoritesCont }}</span>
+      </a>
     </li>
     <li>
       <a routerLinkActive="active-link" routerLink="/search" class="nav-item"
@@ -19,7 +23,7 @@
     </li>
   </ul>
 
-  <div class="nav-button">
+  <div class="nav-container__button">
     <button (click)="logout()">
       Sair
 

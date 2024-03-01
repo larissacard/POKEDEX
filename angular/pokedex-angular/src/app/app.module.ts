@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SearchComponent } from './pages/search/search.component';
 import { DetailsModalComponent } from './components/details-modal/details-modal.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DetailsModalComponent } from './components/details-modal/details-modal.
     SearchBarComponent,
     SearchComponent,
     DetailsModalComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,

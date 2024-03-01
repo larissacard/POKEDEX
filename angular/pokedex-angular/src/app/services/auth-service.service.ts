@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { User } from '../pages/login/login.component';
 import { Router } from '@angular/router';
 
@@ -7,24 +7,23 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   userAutenticated: boolean = false;
+  displayNab: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private router: Router) {}
 
   login(user: User): void {
     if (user.email === 'admin@gmail.com' && user.password === 'admin') {
       localStorage.setItem('user', JSON.stringify(user));
+      this.displayNab.emit(true);
       this.router.navigate(['/home']);
     } else {
+      this.displayNab.emit(false);
       alert('Usuário ou senha inválidos');
     }
   }
 
   isUserAutenticated(): boolean {
-    if (localStorage.getItem('user') !== null) {
-      this.userAutenticated = true;
-    } else {
-      this.userAutenticated = false;
-    }
+    this.userAutenticated = localStorage.getItem('user') ? true : false;
     return this.userAutenticated;
   }
 }
